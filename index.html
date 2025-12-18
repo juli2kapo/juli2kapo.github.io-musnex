@@ -3,211 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | MusNex</title>
     
+    <title>MusNex | Gestión Cultural y Producción de Conciertos</title>
+    
+    <meta name="description" content="MusNex: Expertos en gestión cultural y producción de conciertos. Creamos experiencias únicas e impulsamos artistas y eventos musicales. Descubre nuestros servicios.">
+    
+    <meta name="keywords" content="Gestión cultural, eventos, conciertos, producción musical, MusNex, cultura, artistas, promoción cultural">
+    
+    <meta name="author" content="MusNex">
+    <meta name="robots" content="index, follow"> <link rel="canonical" href="https://malusold0.wixsite.com/musnex">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MusNex | Gestión Cultural y Conciertos">
+    <meta property="og:description" content="Impulsamos la cultura a través de la producción de conciertos y eventos de alto nivel.">
+    <meta property="og:image" content="https://static.wixstatic.com/media/11062b_6bba1e4c5757444285292bb7a26c0a75f000.jpg">
+    <meta property="og:url" content="https://malusold0.wixsite.com/musnex">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MusNex",
+      "url": "https://malusold0.wixsite.com/musnex",
+      "logo": "https://static.wixstatic.com/media/d1c839_1ce88ba9fea64d2883d389989b8f48e6~mv2.png",
+      "description": "Gestión cultural y producción de conciertos.",
+      "sameAs": [
+        "https://www.instagram.com/tu_usuario", 
+        "https://www.facebook.com/tu_pagina"
+      ]
+    }
+    </script>
+
     <style>
         /* --- RESET & BASIC SETUP --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body, html {
-            height: 100%;
-            width: 100%;
-            overflow-x: hidden;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html { height: 100%; width: 100%; overflow-x: hidden; }
 
         body {
             font-family: 'Montserrat', sans-serif;
             color: #fff;
             display: flex;
             flex-direction: column;
-            
-            /* BACKGROUND IMAGE 
-               I extracted this specific URL from your Wix code "pageBackground_sljxl_img".
-            */
+            /* La imagen de fondo es un factor LCP (Largest Contentful Paint). 
+               Asegúrate de que esté optimizada (formato AVIF/WebP es excelente). */
             background-image: url('https://static.wixstatic.com/media/11062b_6bba1e4c5757444285292bb7a26c0a75f000.jpg/v1/fill/w_1920,h_1080,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_6bba1e4c5757444285292bb7a26c0a75f000.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed; /* Parallax effect */
+            background-attachment: fixed;
         }
 
-        /* Dark overlay to ensure text is readable over the image */
         body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity here */
-            z-index: -1;
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); z-index: -1;
         }
 
         /* --- HEADER & LOGO --- */
         header {
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            z-index: 10;
+            padding: 20px 40px; display: flex; justify-content: space-between; align-items: center;
+            position: relative; z-index: 10;
         }
 
         .logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            gap: 5px; /* Spacing between letters and image */
+            display: flex; align-items: center; justify-content: center; text-decoration: none; gap: 5px;
         }
 
-        /* The letters M and N */
         .logo-text {
-            font-family: 'Bodoni Moda', serif; /* Matching the Wix 'The Seasons' font */
-            font-size: 30px;
-            color: #F0EFF4; /* Exact Wix off-white color */
-            line-height: 1;
+            font-family: 'Bodoni Moda', serif; font-size: 30px; color: #F0EFF4; line-height: 1;
         }
 
-        /* The center logo image from your HTML */
         .logo-img {
-            width: 63px;
-            height: 63px;
-            object-fit: cover;
-            display: block;
+            width: 63px; height: 63px; object-fit: cover; display: block;
         }
 
-        /* Desktop Navigation (Hidden on small mobile) */
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        
         nav a {
-            color: #F0EFF4;
-            text-decoration: none;
-            font-size: 16px;
-            font-family: 'Montserrat', sans-serif; /* Matching DIN/Proxima */
-            font-weight: 300;
-            transition: color 0.3s;
+            color: #F0EFF4; text-decoration: none; font-size: 16px;
+            font-family: 'Montserrat', sans-serif; font-weight: 300; transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: #A3B4A2;
-        }
+        nav a:hover { color: #A3B4A2; }
 
         /* --- MAIN HERO SECTION --- */
         main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            margin-top: -40px; /* Slight visual adjustment to match Wix positioning */
+            flex: 1; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; padding: 0 20px; margin-top: -40px;
         }
 
         h1 {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 100px; /* Exact size from Wix CSS */
-            font-weight: 400;
-            letter-spacing: 0.2em; /* 0.2em from Wix CSS */
-            color: #F0EFF4;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            font-family: 'Bodoni Moda', serif; font-size: 100px; font-weight: 400;
+            letter-spacing: 0.2em; color: #F0EFF4; margin-bottom: 20px; line-height: 1.2;
             text-transform: capitalize;
         }
 
+        /* Cambiado de div a h2 para mejor jerarquía SEO */
         .subtitle {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 20px; /* From Wix CSS --font_7 */
-            line-height: 1.5;
-            color: #F0EFF4;
-            max-width: 800px;
-            margin-bottom: 40px;
-            font-weight: 300;
+            font-family: 'Montserrat', sans-serif; font-size: 20px; line-height: 1.5;
+            color: #F0EFF4; max-width: 800px; margin-bottom: 40px; font-weight: 300;
         }
 
-        /* --- BUTTON --- */
         .btn-web {
-            /* Exact Color from Wix CSS: #A3B4A2 */
-            background-color: #A3B4A2; 
-            color: #000000;
-            text-decoration: none;
-            padding: 10px 45px;
-            border-radius: 50px;
-            font-size: 15px;
-            letter-spacing: 0.25em;
-            font-family: 'Montserrat', sans-serif;
-            transition: all 0.3s ease;
+            background-color: #A3B4A2; color: #000000; text-decoration: none;
+            padding: 10px 45px; border-radius: 50px; font-size: 15px; letter-spacing: 0.25em;
+            font-family: 'Montserrat', sans-serif; transition: all 0.3s ease;
             border: 1px solid #A3B4A2;
         }
 
         .btn-web:hover {
-            background-color: transparent;
-            color: #ffffff;
-            border: 1px solid #ffffff;
+            background-color: transparent; color: #ffffff; border: 1px solid #ffffff;
+        }
+        
+        /* Footer simple para SEO local (opcional pero recomendado) */
+        footer {
+            font-size: 12px; color: #F0EFF4; padding: 20px; text-align: center; font-family: 'Montserrat', sans-serif;
         }
 
-        /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 768px) {
-            /* Hide desktop nav on mobile */
             nav { display: none; }
-            
-            header {
-                justify-content: center; /* Center logo on mobile */
-            }
-
-            h1 {
-                font-size: 50px; /* Scale down title */
-                letter-spacing: 0.1em;
-            }
-
-            .subtitle {
-                font-size: 16px;
-                padding: 0 10px;
-            }
-
-            .logo-img {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .logo-text {
-                font-size: 24px;
-            }
+            header { justify-content: center; }
+            h1 { font-size: 50px; letter-spacing: 0.1em; }
+            .subtitle { font-size: 16px; padding: 0 10px; }
+            .logo-img { width: 50px; height: 50px; }
+            .logo-text { font-size: 24px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo-container">
+        <a href="https://malusold0.wixsite.com/musnex" class="logo-container" title="Ir al inicio de MusNex">
             <span class="logo-text">M</span>
             <img 
                 src="https://static.wixstatic.com/media/d1c839_1ce88ba9fea64d2883d389989b8f48e6~mv2.png/v1/fill/w_126,h_126,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d1c839_1ce88ba9fea64d2883d389989b8f48e6~mv2.png" 
-                alt="MusNex Logo Icon" 
+                alt="Logotipo de MusNex - Gestión Cultural" 
                 class="logo-img"
+                width="63" height="63"
             >
             <span class="logo-text">N</span>
         </a>
 
         <nav>
             <ul>
-                <li><a href="https://malusold0.wixsite.com/musnex/conciertos">Conciertos</a></li>
-                <li><a href="https://malusold0.wixsite.com/musnex/cursos-eventos">Cursos/Eventos</a></li>
-                <li><a href="https://malusold0.wixsite.com/musnex/aliados-culturales">Aliados</a></li>
-                <li><a href="https://malusold0.wixsite.com/musnex/música">Música</a></li>
+                <li><a href="https://malusold0.wixsite.com/musnex/conciertos" title="Ver próximos conciertos">Conciertos</a></li>
+                <li><a href="https://malusold0.wixsite.com/musnex/cursos-eventos" title="Cursos y Eventos culturales">Cursos/Eventos</a></li>
+                <li><a href="https://malusold0.wixsite.com/musnex/aliados-culturales" title="Nuestros aliados">Aliados</a></li>
+                <li><a href="https://malusold0.wixsite.com/musnex/música" title="Música y Artistas">Música</a></li>
             </ul>
         </nav>
     </header>
@@ -215,13 +160,17 @@
     <main>
         <h1>MusNex</h1>
         
-        <div class="subtitle">
-            Gestión cultural y producción de conciertos<br>
-            Creamos y desarrollamos conciertos y eventos culturales impulsando artistas
-        </div>
+        <h2 class="subtitle">
+            Gestión cultural y producción de conciertos.<br>
+            Creamos y desarrollamos eventos culturales impulsando artistas.
+        </h2>
 
-        <a href="https://malusold0.wixsite.com/musnex" class="btn-web">WEB</a>
+        <a href="https://malusold0.wixsite.com/musnex" class="btn-web" title="Visitar sitio web oficial">WEB</a>
     </main>
+
+    <footer>
+        <p>&copy; 2025 MusNex. Todos los derechos reservados.</p>
+    </footer>
 
 </body>
 </html>
