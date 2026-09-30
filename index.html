@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>MusNex | Gestión Cultural y Producción de Conciertos</title>
     <meta name="description" content="MusNex: Gestión cultural y producción de conciertos en Argentina. Creamos experiencias únicas e impulsamos artistas. Entra y conoce nuestros eventos.">
     <meta name="keywords" content="Gestión cultural, eventos, conciertos, producción musical, MusNex, cultura, artistas, Argentina, Buenos Aires">
@@ -15,153 +15,176 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="MusNex | Gestión Cultural">
     <meta property="og:description" content="Gestión cultural y producción de conciertos. Entra para ver nuestros próximos eventos.">
-    <meta property="og:image" content="https://static.wixstatic.com/media/11062b_6bba1e4c5757444285292bb7a26c0a75f000.jpg">
+    <meta property="og:image" content="https://www.musnex.com.ar/assets/img/hero.jpg">
     <meta property="og:url" content="https://www.musnex.com.ar/">
+
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400&family=Montserrat:wght@300;400&family=Playfair+Display:wght@800&display=swap" rel="stylesheet">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "MusNex",
       "url": "https://www.musnex.com.ar",
-      "logo": "https://static.wixstatic.com/media/d1c839_1ce88ba9fea64d2883d389989b8f48e6~mv2.png",
+      "logo": "https://www.musnex.com.ar/assets/img/logo.png",
+      "email": "gestion@musnex.com.ar",
       "sameAs": [
-        "https://malusold0.wixsite.com/musnex"
+        "https://www.instagram.com/malena.sol.decuzzi/"
       ]
     }
     </script>
 
-    <style>
-        /* --- ESTILOS --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body, html { height: 100%; width: 100%; overflow-x: hidden; }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            background-image: url('https://static.wixstatic.com/media/11062b_6bba1e4c5757444285292bb7a26c0a75f000.jpg/v1/fill/w_1920,h_1080,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_6bba1e4c5757444285292bb7a26c0a75f000.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-
-        body::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.4); z-index: -1;
-        }
-
-        header {
-            padding: 20px 40px; display: flex; justify-content: space-between; align-items: center;
-            position: relative; z-index: 10;
-        }
-
-        .logo-container {
-            display: flex; align-items: center; justify-content: center; text-decoration: none; gap: 5px;
-        }
-
-        .logo-text {
-            font-family: 'Bodoni Moda', serif; font-size: 30px; color: #F0EFF4; line-height: 1;
-        }
-
-        .logo-img {
-            width: 63px; height: 63px; object-fit: cover; display: block;
-        }
-
-        nav ul { display: flex; list-style: none; gap: 30px; }
-        
-        nav a {
-            color: #F0EFF4; text-decoration: none; font-size: 16px;
-            font-family: 'Montserrat', sans-serif; font-weight: 300; transition: color 0.3s;
-        }
-
-        nav a:hover { color: #A3B4A2; }
-
-        main {
-            flex: 1; display: flex; flex-direction: column; justify-content: center;
-            align-items: center; text-align: center; padding: 0 20px; margin-top: -40px;
-        }
-
-        h1 {
-            font-family: 'Bodoni Moda', serif; font-size: 100px; font-weight: 400;
-            letter-spacing: 0.2em; color: #F0EFF4; margin-bottom: 20px; line-height: 1.2;
-            text-transform: capitalize;
-        }
-
-        .subtitle {
-            font-family: 'Montserrat', sans-serif; font-size: 20px; line-height: 1.5;
-            color: #F0EFF4; max-width: 800px; margin-bottom: 40px; font-weight: 300;
-        }
-
-        .btn-web {
-            background-color: #A3B4A2; color: #000000; text-decoration: none;
-            padding: 10px 45px; border-radius: 50px; font-size: 15px; letter-spacing: 0.25em;
-            font-family: 'Montserrat', sans-serif; transition: all 0.3s ease;
-            border: 1px solid #A3B4A2;
-        }
-
-        .btn-web:hover {
-            background-color: transparent; color: #ffffff; border: 1px solid #ffffff;
-        }
-
-        footer {
-            font-size: 12px; color: #F0EFF4; padding: 20px; text-align: center; font-family: 'Montserrat', sans-serif;
-        }
-
-        @media (max-width: 768px) {
-            nav { display: none; }
-            header { justify-content: center; }
-            h1 { font-size: 50px; letter-spacing: 0.1em; }
-            .subtitle { font-size: 16px; padding: 0 10px; }
-            .logo-img { width: 50px; height: 50px; }
-            .logo-text { font-size: 24px; }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
     <header>
-        <a href="https://www.musnex.com.ar/" class="logo-container" title="Inicio MusNex">
-            <span class="logo-text">M</span>
-            <img 
-                src="https://static.wixstatic.com/media/d1c839_1ce88ba9fea64d2883d389989b8f48e6~mv2.png/v1/fill/w_126,h_126,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d1c839_1ce88ba9fea64d2883d389989b8f48e6~mv2.png" 
-                alt="Logo" 
-                class="logo-img"
-                width="63" height="63"
-            >
-            <span class="logo-text">N</span>
+        <a href="./" class="logo" title="Inicio MusNex">
+            <span>M</span>
+            <img src="assets/img/logo.png" alt="MusNex" width="52" height="52">
+            <span>N</span>
         </a>
 
-        <nav>
+        <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false"><span></span></button>
+
+        <nav aria-label="Sitio">
             <ul>
-                <li><a href="https://malusold0.wixsite.com/musnex/conciertos" target="_blank" rel="noopener">Conciertos</a></li>
-                <li><a href="https://malusold0.wixsite.com/musnex/cursos-eventos" target="_blank" rel="noopener">Cursos/Eventos</a></li>
-                <li><a href="https://malusold0.wixsite.com/musnex/aliados-culturales" target="_blank" rel="noopener">Aliados</a></li>
-                <li><a href="https://malusold0.wixsite.com/musnex/música" target="_blank" rel="noopener">Música</a></li>
+                <li><a href="./" aria-current="page">Inicio</a></li>
+                <li><a href="conciertos.html">Conciertos</a></li>
+                <li><a href="cursos-eventos.html">Cursos/Eventos</a></li>
+                <li><a href="aliados-culturales.html">Aliados Culturales</a></li>
+                <li><a href="musica.html">Música</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1>MusNex</h1>
-        
-        <h2 class="subtitle">
-            Gestión cultural y producción de conciertos.<br>
-            Creamos y desarrollamos eventos culturales impulsando artistas
-        </h2>
+        <section class="hero">
+            <video autoplay muted loop playsinline poster="assets/img/hero.jpg">
+                <source src="assets/video/hero.mp4" type="video/mp4">
+            </video>
+            <h1>MusNex</h1>
+            <p>Gestión cultural y producción de conciertos<br>
+               Creamos y desarrollamos conciertos y eventos culturales impulsando artistas</p>
+            <a href="conciertos.html" class="btn">Conciertos</a>
+        </section>
 
-        <a href="https://malusold0.wixsite.com/musnex" class="btn-web" target="_blank" rel="noopener">WEB</a>
+        <section class="artistas" aria-labelledby="artistas-title">
+            <div class="video-title">
+                <video autoplay muted loop playsinline aria-hidden="true">
+                    <source src="assets/video/artistas-title.mp4" type="video/mp4">
+                </video>
+                <h2 id="artistas-title">Artistas Destacados</h2>
+            </div>
+
+            <div class="slider">
+                <button class="arrow prev" aria-label="Anterior"></button>
+                <div class="track">
+                    <article class="card">
+                        <img src="assets/img/eternite.jpg" alt="Orquesta Éternité" loading="lazy">
+                        <div class="card-info">
+                            <h3>ORQUESTA ÉTERNITÉ</h3>
+                            <p>Orquesta dirigida por Milagros Basaluzzo. Tuvo su debut en el Teatro 25 de Mayo con el espectáculo Acordes con Rouge.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/img/adamo.jpg" alt="Gabriel Adamo" loading="lazy">
+                        <div class="card-info">
+                            <h3>GABRIEL ADAMO</h3>
+                            <p>Compositor argentino distinguido con diversos premios a la composición, miembro de la Asociación Argentina de Compositores. Actualmente compositor del ciclo La Forma y su Deriva.</p>
+                        </div>
+                    </article>
+                    <article class="card" data-youtube="29yqBvJCAsI">
+                        <img src="assets/img/melodias.png" alt="Melodías Eternas" loading="lazy">
+                        <button class="play" aria-label="Reproducir video de Melodías Eternas"></button>
+                        <div class="card-info">
+                            <h3>MELODÍAS ETERNAS</h3>
+                            <p>Dúo de Cámara<br>Soprano: Macarena Urg<br>Pianista: Malena Sol Decuzzi</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/img/noegold.jpg" alt="Noe Gold al piano" loading="lazy">
+                        <div class="card-info">
+                            <h3>NOE GOLD</h3>
+                            <p>Pianista solista,<br>Música estilo popular, dúos con cuerdas y música antigua</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/img/lolarts.jpg" alt="Esculturas de Lolarts" loading="lazy">
+                        <div class="card-info">
+                            <h3>LOLARTS</h3>
+                            <p>Artista plástica,<br>Dedicada a la escultura y al vitreaux</p>
+                        </div>
+                    </article>
+                </div>
+                <button class="arrow next" aria-label="Siguiente"></button>
+            </div>
+        </section>
+
+        <section class="contacto" id="contacto">
+            <div class="contacto-info">
+                <h2>Contacto</h2>
+                <p>CABA, Palermo y Villa Ortuzar</p>
+                <p><a href="mailto:gestion@musnex.com.ar">gestion@musnex.com.ar</a></p>
+                <a class="ig" href="https://www.instagram.com/malena.sol.decuzzi/" target="_blank" rel="noopener" aria-label="Instagram de la gestora">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg>
+                </a>
+                <div class="difusion">
+                    <h3>Grupo de Difusión</h3>
+                    <img src="assets/img/qr-difusion.png" alt="Código QR del grupo de difusión de WhatsApp" loading="lazy">
+                </div>
+            </div>
+
+            <div class="contacto-form">
+                <h2>¿Estas buscando ayuda para gestionar tu proyecto artístico?</h2>
+                <form id="form" action="https://formsubmit.co/gestion@musnex.com.ar" method="POST">
+                    <input type="hidden" name="_subject" value="Nuevo mensaje desde musnex.com.ar">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+                    <div class="field">
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" name="nombre" type="text" autocomplete="given-name">
+                    </div>
+                    <div class="field">
+                        <label for="apellido">Apellido</label>
+                        <input id="apellido" name="apellido" type="text" autocomplete="family-name">
+                    </div>
+                    <div class="field full">
+                        <label for="email">Email *</label>
+                        <input id="email" name="email" type="email" required autocomplete="email">
+                    </div>
+                    <div class="field full">
+                        <label for="mensaje">Mensaje (comentanos sobre tu proyecto)</label>
+                        <textarea id="mensaje" name="mensaje"></textarea>
+                    </div>
+                    <button type="submit">Enviar</button>
+                    <p class="form-msg" role="status"></p>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 MusNex. <a href="https://malusold0.wixsite.com/musnex" style="color:#fff;text-decoration:none;">Sitio Oficial</a></p>
+        <div class="sponsor">
+            <h2>Patrocinios:</h2>
+            <img src="assets/img/patrocinio-aa.png" alt="Patrocinador" loading="lazy">
+        </div>
+        <div>
+            <h2>Apoyan nuestros proyectos:</h2>
+            <div class="logos">
+                <img src="assets/img/aac.png" alt="Asociación Argentina de Compositores" loading="lazy">
+                <img src="assets/img/templo-libertad.png" alt="Templo Libertad" loading="lazy">
+                <img src="assets/img/lepi.png" alt="L'épi boulangerie" loading="lazy">
+                <img src="assets/img/adef.png" alt="AdeF Villa Ortúzar" class="adef" loading="lazy">
+            </div>
+        </div>
     </footer>
+    <p class="copy">&copy; 2026 MusNex</p>
 
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

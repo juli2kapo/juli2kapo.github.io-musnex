@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Conciertos | MusNex</title>
+    <meta name="description" content="Calendario de conciertos de MusNex: ciclo 2026 de música en Buenos Aires.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.musnex.com.ar/conciertos">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Conciertos | MusNex">
+    <meta property="og:description" content="Calendario de conciertos de MusNex: ciclo 2026 de música en Buenos Aires.">
+    <meta property="og:image" content="https://www.musnex.com.ar/assets/img/hero.jpg">
+    <meta property="og:url" content="https://www.musnex.com.ar/conciertos">
+
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <header>
+        <a href="./" class="logo" title="Inicio MusNex">
+            <span>M</span>
+            <img src="assets/img/logo.png" alt="MusNex" width="52" height="52">
+            <span>N</span>
+        </a>
+
+        <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false"><span></span></button>
+
+        <nav aria-label="Sitio">
+            <ul>
+                <li><a href="./">Inicio</a></li>
+                <li><a href="conciertos.html" aria-current="page">Conciertos</a></li>
+                <li><a href="cursos-eventos.html">Cursos/Eventos</a></li>
+                <li><a href="aliados-culturales.html">Aliados Culturales</a></li>
+                <li><a href="musica.html">Música</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="band conc-band">
+            <video autoplay muted loop playsinline poster="assets/img/hero.jpg" aria-hidden="true">
+                <source src="assets/video/hero.mp4" type="video/mp4">
+            </video>
+            <h1 class="page-title">Conciertos</h1>
+            <p>Vení a escuchar nuestro ciclo 2026</p>
+        </section>
+
+        <section class="conc-main">
+            <div class="calendar">
+                <div class="cal-head">
+                    <button class="cal-prev" aria-label="Mes anterior">&larr;</button>
+                    <h2 aria-live="polite"></h2>
+                    <button class="cal-next" aria-label="Mes siguiente">&rarr;</button>
+                </div>
+                <div class="cal-grid"></div>
+            </div>
+            <aside class="event-panel" aria-live="polite"></aside>
+        </section>
+    </main>
+
+    <footer>
+        <div class="sponsor">
+            <h2>Patrocinios:</h2>
+            <img src="assets/img/patrocinio-aa.png" alt="Patrocinador" loading="lazy">
+        </div>
+        <div>
+            <h2>Apoyan nuestros proyectos:</h2>
+            <div class="logos">
+                <img src="assets/img/aac.png" alt="Asociación Argentina de Compositores" loading="lazy">
+                <img src="assets/img/templo-libertad.png" alt="Templo Libertad" loading="lazy">
+                <img src="assets/img/lepi.png" alt="L'épi boulangerie" loading="lazy">
+                <img src="assets/img/adef.png" alt="AdeF Villa Ortúzar" class="adef" loading="lazy">
+            </div>
+        </div>
+    </footer>
+    <p class="copy">&copy; 2026 MusNex</p>
+
+    <script src="assets/js/conciertos-data.js"></script>
+    <script src="assets/js/calendario.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
