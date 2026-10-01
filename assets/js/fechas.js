@@ -25,3 +25,6 @@ export function formatearFecha(f) {
     const [a, m, d] = f.split('-');
     return d ? `${d}/${m}/${a}` : `${m}/${a}`;
 }
+
+// Orden de conciertos: por fecha y, el mismo día, por hora (sin hora va primero)
+export const porFechaYHora = (a, b) => (a.fecha + ' ' + a.hora).localeCompare(b.fecha + ' ' + b.hora);
