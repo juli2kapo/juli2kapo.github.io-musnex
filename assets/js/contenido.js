@@ -14,6 +14,11 @@ export function cargarContenido() {
 }
 
 export const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-export const linkify = s => esc(s).replace(/https?:\/\/[^\s<]+/g, u => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`);
+// La puntuación que cierra la oración ("…en https://x.com.") queda fuera del link
+export const linkify = s => esc(s).replace(/https?:\/\/[^\s<]+/g, u => {
+    const fin = u.match(/[.,:!?)]+$/)?.[0] || '';
+    const url = u.slice(0, u.length - fin.length);
+    return `<a href="${url}" target="_blank" rel="noopener">${url}</a>${fin}`;
+});
 export const botonHTML = (b, clase) => b ? `<a class="${clase}" href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.texto)}</a>` : '';
 export const errorHTML = que => `<p class="carga-error">No se pudieron cargar ${que}. Probá de nuevo en un rato.</p>`;
