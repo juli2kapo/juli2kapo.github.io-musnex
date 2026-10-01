@@ -60,28 +60,12 @@
 
         <section class="eventos">
             <h2>Eventos</h2>
-            <div class="eventos-lista">
-                <!-- data-fecha: AAAA-MM-DD o AAAA-MM. La página los ordena sola: próximos primero, los que ya pasaron al final -->
-                <article class="evento-card" data-fecha="2026-11-14">
-                    <h3>Noche de los Museos</h3>
-                    <p class="evento-fecha">14/11/2026</p>
-                    <p>¡Melodías Eternas formará parte de la Noche de los Museos en Museo Roca!</p>
-                </article>
-                <article class="evento-card" data-fecha="2026-03">
-                    <h3>Rodaje</h3>
-                    <p class="evento-fecha">03/2026</p>
-                    <p>Junto con la productora audiovisual Conejo Negro 2k nos encontramos gestionando la parte musical de un Teaser en la Asociación de Fomento Villa Ortuzar. Si te interesa participar como trompetista podés escribirnos:</p>
-                    <a href="https://wa.me/5491131351262" target="_blank" rel="noopener">WhatsApp</a>
-                </article>
-            </div>
+            <div class="eventos-lista" aria-live="polite"></div>
         </section>
 
         <section class="destacados">
             <h2>Cursos destacados</h2>
-            <div class="pill">
-                <h3>2026 en construcción</h3>
-                <p>Próximamente cursos sobre ¿Cómo vivir el escenario con tranquilidad?, ¿Cómo gestiono mi proyecto artístico?, entre otros.</p>
-            </div>
+            <div class="cursos-lista" aria-live="polite"></div>
         </section>
     </main>
 
@@ -102,6 +86,7 @@
     </footer>
     <p class="copy">&copy; 2026 MusNex</p>
 
-    <script src="assets/js/main.js?v=3"></script>
+    <script src="assets/js/main.js?v=4"></script>
+    <script type="module" src="assets/js/cursos-eventos.js"></script>
 </body>
 </html>
