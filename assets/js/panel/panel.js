@@ -14,7 +14,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 async function api(metodo, ruta, cuerpo) {
     const r = await fetch(API_URL + ruta, {
         method: metodo, cache: 'no-store',
-        headers: { 'content-type': 'application/json', 'x-edit-key': clave },
+        headers: { 'content-type': 'application/json', 'x-edit-key': clave, ...(est.datos ? { 'x-version': String(est.datos.version ?? 0) } : {}) },
         body: cuerpo === undefined ? undefined : JSON.stringify(cuerpo),
     });
     if (!r.ok) throw new Error((await r.text()) || `Error ${r.status}`);
@@ -96,6 +96,7 @@ async function guardarSeccion(lista, ok) {
     try {
         const r = await api('PUT', `/api/contenido/${est.tab}`, lista);
         est.datos[est.tab] = r[est.tab];
+        est.datos.version = r.version;
         avisar(ok);
         return true;
     } catch (e) {
