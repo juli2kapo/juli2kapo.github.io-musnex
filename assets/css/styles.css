@@ -100,7 +100,8 @@ h1 {
     position: relative; flex: 0 0 auto; height: 400px; aspect-ratio: 4 / 3; max-width: calc(100vw - 132px);
     overflow: hidden; scroll-snap-align: start; background: #111;
 }
-.card:nth-child(odd) { aspect-ratio: 380 / 400; }
+.card-angosta { aspect-ratio: 380 / 400; }
+.card-video { aspect-ratio: 16 / 9; } /* mismo formato que el video de YouTube, sin franjas negras */
 .card img, .card iframe { width: 100%; height: 100%; object-fit: cover; border: 0; }
 .card img { transition: transform .6s ease; }
 .card:hover img { transform: scale(1.04); }
@@ -332,7 +333,8 @@ footer h2 { font-family: var(--title); font-weight: 400; font-size: 30px; margin
     .hero p br { display: none; }
 
     .slider { padding: 0 16px; }
-    .card, .card:nth-child(odd) { height: auto; width: calc(100vw - 32px); max-width: none; aspect-ratio: 4 / 3; }
+    .card, .card-angosta { height: auto; width: calc(100vw - 32px); max-width: none; aspect-ratio: 4 / 3; }
+    .card-video { aspect-ratio: 16 / 9; align-self: center; }
     .arrow { display: none; }
 
     .contacto { grid-template-columns: 1fr; }
