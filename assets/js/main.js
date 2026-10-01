@@ -27,26 +27,30 @@ document.querySelectorAll('.card[data-youtube] .play').forEach(btn => {
     });
 });
 
-// Formulario: el de Wix no funciona fuera de Wix, se envía por FormSubmit
+// Formulario: el de Wix no funciona fuera de Wix, se envía por FormSubmit.
+// Envío normal (no AJAX) porque FormSubmit solo manda adjuntos así; después vuelve con ?enviado=1
 const form = document.getElementById('form');
 if (form) {
     const msg = form.querySelector('.form-msg');
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const btn = form.querySelector('button');
-        btn.disabled = true;
+    const cv = form.querySelector('#cv');
+    if (new URLSearchParams(location.search).has('enviado')) {
+        msg.textContent = '¡Muchas gracias por contactarnos! Te responderemos a la brevedad.';
+        history.replaceState(null, '', location.pathname + '#contacto');
+    }
+    cv.addEventListener('change', () => {
+        const f = cv.files[0];
+        if (f && !/\.pdf$/i.test(f.name)) cv.setCustomValidity('El archivo tiene que ser un PDF.');
+        else if (f && f.size > 10 * 1024 * 1024) cv.setCustomValidity('El PDF no puede pesar más de 10 MB.');
+        else cv.setCustomValidity('');
+        cv.reportValidity();
+    });
+    form.addEventListener('submit', () => {
+        form.querySelector('button').disabled = true;
         msg.textContent = 'Enviando…';
-        try {
-            const res = await fetch('https://formsubmit.co/ajax/gestion@musnex.com.ar', {
-                method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form)
-            });
-            if (!res.ok) throw new Error();
-            form.reset();
-            msg.textContent = '¡Muchas gracias por contactarnos! Te responderemos a la brevedad.';
-        } catch {
-            msg.innerHTML = 'No se pudo enviar. Escribinos a <a href="mailto:gestion@musnex.com.ar">gestion@musnex.com.ar</a>.';
-        } finally {
-            btn.disabled = false;
-        }
+    });
+    // Si vuelven con "atrás", el botón no queda trabado
+    addEventListener('pageshow', () => {
+        form.querySelector('button').disabled = false;
+        if (msg.textContent === 'Enviando…') msg.textContent = '';
     });
 }

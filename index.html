@@ -134,9 +134,11 @@
 
             <div class="contacto-form">
                 <h2>¿Estas buscando ayuda para gestionar tu proyecto artístico?</h2>
-                <form id="form" action="https://formsubmit.co/gestion@musnex.com.ar" method="POST">
+                <form id="form" action="https://formsubmit.co/gestion@musnex.com.ar" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_subject" value="Nuevo mensaje desde musnex.com.ar">
                     <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://www.musnex.com.ar/?enviado=1#contacto">
                     <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
                     <div class="field">
                         <label for="nombre">Nombre</label>
@@ -149,6 +151,10 @@
                     <div class="field full">
                         <label for="email">Email *</label>
                         <input id="email" name="email" type="email" required autocomplete="email">
+                    </div>
+                    <div class="field full">
+                        <label for="cv">Portfolio/Dossier/CV <span class="opcional">(opcional, PDF de hasta 10 MB)</span></label>
+                        <input id="cv" name="attachment" type="file" accept="application/pdf,.pdf">
                     </div>
                     <div class="field full">
                         <label for="mensaje">Mensaje (comentanos sobre tu proyecto)</label>
@@ -178,6 +184,6 @@
     </footer>
     <p class="copy">&copy; 2026 MusNex</p>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=2"></script>
 </body>
 </html>
