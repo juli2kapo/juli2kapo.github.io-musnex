@@ -100,9 +100,6 @@ h1 {
     position: relative; flex: 0 0 auto; height: 400px; aspect-ratio: 4 / 3; max-width: calc(100vw - 132px);
     overflow: hidden; scroll-snap-align: start; background: #111;
 }
-.card-angosta { aspect-ratio: 380 / 400; }
-.card-video { aspect-ratio: 16 / 9; } /* mismo formato que el video de YouTube, sin franjas negras */
-.card img, .card iframe { width: 100%; height: 100%; object-fit: cover; border: 0; }
 .card img { transition: transform .6s ease; }
 .card:hover img { transform: scale(1.04); }
 .card-info {
@@ -110,7 +107,15 @@ h1 {
     background: linear-gradient(transparent, rgba(0,0,0,.55)); font-size: 16px; font-weight: 400; line-height: 1.45;
     pointer-events: none;
 }
-.card-info h3 { font-family: var(--title); font-weight: 400; font-size: 16px; margin-bottom: 12px; }
+.card-info h3 { font-family: var(--title); font-weight: 400; font-size: 16px; margin-bottom: 12px; text-transform: uppercase; }
+.card-info p { white-space: pre-line; }
+.card-btn {
+    pointer-events: auto; display: inline-block; margin-top: 14px; padding: 6px 18px; border: 1px solid var(--light);
+    border-radius: 50px; color: var(--light); text-decoration: none; font-size: 13px; letter-spacing: .12em; transition: background .3s, color .3s;
+}
+.card-btn:hover { background: var(--light); color: var(--black); }
+.card-info { transition: opacity .3s; }
+.card.reproduciendo .card-info { opacity: 0; }
 .play {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
     width: 64px; height: 64px; border-radius: 50%; border: 0; cursor: pointer;
@@ -341,8 +346,8 @@ footer h2 { font-family: var(--title); font-weight: 400; font-size: 30px; margin
     .hero p br { display: none; }
 
     .slider { padding: 0 16px; }
-    .card, .card-angosta { height: auto; width: calc(100vw - 32px); max-width: none; aspect-ratio: 4 / 3; }
-    .card-video { aspect-ratio: 16 / 9; align-self: center; }
+    .card { height: auto; width: calc(100vw - 32px); max-width: none; }
+    .track { align-items: center; }
     .arrow { display: none; }
 
     .contacto { grid-template-columns: 1fr; }
