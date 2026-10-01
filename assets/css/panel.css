@@ -46,6 +46,7 @@ button:disabled { opacity: .3; cursor: default; }
 .p-subir { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
 .p-subir .p-yt { flex: 1 1 220px; width: auto !important; }
 .p-prog { font-size: 13px; color: var(--muted); }
+.p-barra { width: 160px; height: 10px; accent-color: var(--mauve); }
 .p-estado { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); background: #1c1b1f; color: #fff; padding: 10px 18px; border-radius: 10px; font-size: 14px; max-width: calc(100vw - 32px); }
 .p-estado:empty { display: none; }
 .p-estado.error { background: var(--error); }

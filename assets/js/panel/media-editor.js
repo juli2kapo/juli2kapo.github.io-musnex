@@ -39,6 +39,7 @@ export function crearEditorMedia(inicial, { clave, soloImagen = false, alCambiar
     el.className = 'p-media';
 
     const aviso = t => { const p = el.querySelector('.p-prog'); if (p) p.textContent = t; };
+    const barra = v => { const b = el.querySelector('.p-barra'); if (b) { b.hidden = v === null; b.value = v ?? 0; } };
 
     function pintar(textoAviso = '') {
         const thumb = m => m.tipo === 'video'
@@ -59,6 +60,7 @@ export function crearEditorMedia(inicial, { clave, soloImagen = false, alCambiar
                     <input type="file" hidden ${soloImagen ? 'accept="image/*"' : 'multiple accept="image/*,video/mp4,video/webm"'}></label>
                     ${soloImagen ? '' : `<input type="text" class="p-yt" placeholder="…o pegá un link de YouTube">
                     <button type="button" class="p-btn p-btn-sec" data-a="yt">Agregar</button>`}` : ''}
+                <progress class="p-barra" max="100" hidden></progress>
                 <span class="p-prog" role="status">${textoAviso}</span>
             </div>`;
     }
@@ -93,7 +95,14 @@ export function crearEditorMedia(inicial, { clave, soloImagen = false, alCambiar
                 aviso(`Subiendo ${n + 1} de ${files.length}…`);
                 const f = files[n];
                 const medida = await medir(f);
-                const [r] = await window.UT.uploadFiles('media', { files: [f], headers: { 'x-edit-key': clave } });
+                const [r] = await window.UT.uploadFiles('media', {
+                    files: [f], headers: { 'x-edit-key': clave },
+                    onUploadProgress: ({ progress }) => {
+                        const pct = Math.min(100, Math.round(progress));
+                        barra(pct);
+                        aviso(`Subiendo ${n + 1} de ${files.length}… ${pct}%`);
+                    },
+                });
                 items.push({ tipo: f.type.startsWith('video/') ? 'video' : 'imagen', url: r.ufsUrl || r.url, key: r.key, ...medida });
                 pintar(`Subiendo ${n + 1} de ${files.length}…`);
                 alCambiar();
