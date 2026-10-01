@@ -55,7 +55,7 @@ nav a:hover, nav a[aria-current] { color: #7C7C7E; }
 
 /* --- HERO --- */
 .hero {
-    position: relative; height: 475px; overflow: hidden;
+    position: relative; height: calc(100vh - 86px); height: calc(100svh - 86px); min-height: 560px; overflow: hidden;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     text-align: center; padding: 0 20px;
 }
@@ -326,7 +326,7 @@ footer h2 { font-family: var(--title); font-weight: 400; font-size: 30px; margin
     header.open .menu-btn::before { transform: translateY(9px) rotate(45deg); }
     header.open .menu-btn::after { transform: translateY(-9px) rotate(-45deg); }
 
-    .hero { height: 420px; }
+    .hero { height: calc(100vh - 70px); height: calc(100svh - 70px); min-height: 480px; }
     h1 { font-size: 50px; letter-spacing: 8px; margin-left: 8px; }
     .hero p { font-size: 15px; }
     .hero p br { display: none; }
