@@ -1,0 +1,56 @@
+/* Panel de edición de musnex.com.ar (pensado para compu; en celular se apila) */
+:root { --bg: #f5f4f7; --card: #fff; --ink: #1c1b1f; --muted: #6b6970; --line: #dddbe2; --mauve: #9D7B9B; --sage: #A3B4A2; --error: #b3261e; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font: 400 15px/1.45 'Montserrat', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
+button, input, select, textarea { font: inherit; color: inherit; }
+.p-head { display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; background: #080808; color: #F0EFF4; }
+.p-head a { color: #F0EFF4; font-size: 14px; }
+main { max-width: 1240px; margin: 0 auto; padding: 20px 24px 80px; }
+.p-aviso { margin: 60px auto; max-width: 520px; text-align: center; font-size: 17px; }
+.p-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px; }
+.p-tabs button { border: 1px solid var(--line); background: var(--card); padding: 9px 16px; border-radius: 999px; cursor: pointer; }
+.p-tabs button.on { background: var(--mauve); border-color: var(--mauve); color: #fff; }
+.p-tabs button span { font-size: 12px; opacity: .7; margin-left: 4px; }
+.p-cols { display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: 20px; align-items: start; }
+.p-lista, .p-editor { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+.p-lista ul { list-style: none; margin-top: 14px; }
+.p-lista li { display: grid; grid-template-columns: 82px 1fr auto; gap: 8px; align-items: center; padding: 9px 6px; border-top: 1px solid var(--line); }
+.p-lista li.on { background: #f1ebf1; }
+.p-fecha-lista { font-size: 13px; color: var(--muted); }
+.p-nombre { font-weight: 500; overflow-wrap: anywhere; }
+.p-acciones { display: flex; gap: 2px; }
+.p-acciones button, .p-acc button { border: 0; background: none; cursor: pointer; font-size: 16px; padding: 4px 6px; border-radius: 6px; }
+.p-acciones button:hover:not(:disabled), .p-acc button:hover:not(:disabled) { background: var(--bg); }
+button:disabled { opacity: .3; cursor: default; }
+.p-nota, .p-vacio { color: var(--muted); font-size: 13px; margin-top: 12px; }
+.p-editor h2 { font-size: 19px; font-weight: 600; margin-bottom: 16px; }
+.p-form { display: grid; gap: 18px; }
+.p-campo { display: grid; gap: 6px; }
+.p-campo label { font-weight: 600; font-size: 14px; }
+.p-campo small { color: var(--muted); font-size: 12.5px; }
+.p-campo input:not([type=file]), .p-campo select, .p-campo textarea { width: 100%; border: 1px solid var(--line); border-radius: 8px; padding: 9px 11px; background: #fff; }
+.p-campo textarea { resize: vertical; }
+.p-campo input:focus, .p-campo select:focus, .p-campo textarea:focus { outline: 2px solid var(--mauve); border-color: var(--mauve); }
+.p-fecha { display: flex; gap: 8px; flex-wrap: wrap; }
+.p-fecha > * { width: auto !important; }
+.p-boton { display: grid; grid-template-columns: 1fr 2fr; gap: 8px; }
+.p-btn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--mauve); background: var(--mauve); color: #fff; padding: 9px 18px; border-radius: 8px; cursor: pointer; font-weight: 500; }
+.p-btn:hover { filter: brightness(1.08); }
+.p-btn-sec { background: #fff; color: var(--ink); border-color: var(--line); }
+.p-guardar { display: flex; gap: 10px; margin-top: 22px; position: sticky; bottom: 0; background: var(--card); padding: 12px 0 2px; }
+.p-thumbs { display: flex; flex-wrap: wrap; gap: 10px; }
+.p-thumbs figure { width: 132px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #000; }
+.p-thumbs img, .p-thumbs video { display: block; width: 100%; height: 92px; object-fit: cover; }
+.p-thumbs figcaption { background: var(--card); font-size: 12px; padding: 4px 6px 0; }
+.p-acc { display: flex; justify-content: flex-end; background: var(--card); }
+.p-subir { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+.p-subir .p-yt { flex: 1 1 220px; width: auto !important; }
+.p-prog { font-size: 13px; color: var(--muted); }
+.p-estado { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); background: #1c1b1f; color: #fff; padding: 10px 18px; border-radius: 10px; font-size: 14px; max-width: calc(100vw - 32px); }
+.p-estado:empty { display: none; }
+.p-estado.error { background: var(--error); }
+@media (max-width: 860px) {
+    main { padding: 14px 16px 80px; }
+    .p-cols { grid-template-columns: minmax(0, 1fr); }
+    .p-boton { grid-template-columns: 1fr; }
+}

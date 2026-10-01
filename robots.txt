@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /editar
 
 Sitemap: https://www.musnex.com.ar/sitemap.xml
