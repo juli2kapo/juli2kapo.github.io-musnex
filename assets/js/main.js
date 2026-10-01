@@ -18,6 +18,18 @@ if (track) {
     });
 }
 
+// Eventos (cursos-eventos): próximos primero (el más cercano antes), después los que ya pasaron
+const listaEventos = document.querySelector('.eventos-lista');
+if (listaEventos) {
+    const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+    // "2026-03" vale hasta el último día de marzo; "2026-11-14" hasta ese día
+    const fin = (f) => { const [a, m, d] = f.split('-').map(Number); return new Date(a, m - 1, d || new Date(a, m, 0).getDate()); };
+    const eventos = [...listaEventos.querySelectorAll('.evento-card')].map(el => ({ el, fecha: fin(el.dataset.fecha) }));
+    const proximos = eventos.filter(e => e.fecha >= hoy).sort((x, y) => x.fecha - y.fecha);
+    const pasados = eventos.filter(e => e.fecha < hoy).sort((x, y) => y.fecha - x.fecha);
+    [...proximos, ...pasados].forEach(e => listaEventos.appendChild(e.el));
+}
+
 // Tarjeta con video: carga YouTube recién al tocar play
 document.querySelectorAll('.card[data-youtube] .play').forEach(btn => {
     btn.addEventListener('click', () => {

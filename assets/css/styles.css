@@ -261,8 +261,9 @@ footer h2 { font-family: var(--title); font-weight: 400; font-size: 30px; margin
 
 .eventos { text-align: center; padding: 18px 20px 0; }
 .eventos h2 { font-family: var(--title); font-weight: 400; font-size: 40px; margin-bottom: 10px; }
+.eventos-lista { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 24px; } /* apiladas se tocan: el borde de arriba de una cierra a la anterior */
 .evento-card {
-    width: 308px; max-width: 100%; margin: 0 auto; border: 1px solid #1e1e1e; border-bottom: 0;
+    width: 308px; max-width: 100%; margin: 0; border: 1px solid #1e1e1e; border-bottom: 0;
     padding: 72px 36px 24px;
 }
 .evento-card h3 { font-family: var(--title); font-weight: 400; font-size: 22px; margin-bottom: 22px; }
